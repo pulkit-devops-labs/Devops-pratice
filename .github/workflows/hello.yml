@@ -3,6 +3,7 @@ name: Hello
 jobs:
 
   greet:
-    steps:
-      - name: say hello to users
-        run: echo "Hello guys"
+  
+     steps:
+       - name: say hello to users
+         run: echo "Hello guys $USER"
