@@ -17,4 +17,13 @@ jobs:
       - name: say hello to username
 
         run: echo "hello guys $USER"
+jobs:
 
+  code-build:
+
+     runs-on: ubuntu-latest
+
+     steps:
+
+       - name: code-clone
+         run: echo "code clone is successful"
