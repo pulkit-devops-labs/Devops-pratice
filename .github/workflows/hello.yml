@@ -6,4 +6,4 @@ jobs:
   
      steps:
        - name: say hello to users
-         run: echo "Hello guys $USER"
+         run: echo "Hello guys "
