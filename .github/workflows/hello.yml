@@ -13,3 +13,7 @@ jobs:
       - name: say hello to users
       
         run: echo "Hello guys "
+
+      - name: say hello to username
+
+        run: echo "hello guys $USER"
