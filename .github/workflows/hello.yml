@@ -17,3 +17,7 @@ jobs:
       - name: say hello to username
 
         run: echo "hello guys $USER"
+
+      - name: make directory
+        run: mkdir "Devops-pratice/.github/workflows2"
+
