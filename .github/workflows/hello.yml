@@ -33,4 +33,4 @@ jobs:
     steps:
 
       - name: showing-date
-        run: "today is $date "
+        run: date
