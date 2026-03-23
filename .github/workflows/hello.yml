@@ -34,3 +34,11 @@ jobs:
 
       - name: showing-date
         run:  date
+
+  version-check:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: check docker version and python version
+        run: docker --version && python --version
