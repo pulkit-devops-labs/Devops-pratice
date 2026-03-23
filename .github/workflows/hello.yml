@@ -33,4 +33,4 @@ jobs:
     steps:
 
       - name: showing-date
-        run: echo "today date is " date
+        run:  date
