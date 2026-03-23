@@ -16,7 +16,7 @@ jobs:
 
       - name: say hello to username
 
-        run: echo "hello guys $USER"
+        run: echo "hello  Pulkit "
 
   code-build:
 
@@ -26,3 +26,11 @@ jobs:
 
        - name: code-clone
          run: echo "code clone is successful"
+  showing-date:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: showing-date
+        run: "today is $date "
