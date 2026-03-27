@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pulkit Yadav | DevOps & Cybersecurity Engineer</title>
+<title>Pulkit Yadav | DevOps Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -13,124 +13,124 @@
     padding:0;
     box-sizing:border-box;
     font-family:'Poppins',sans-serif;
-    scroll-behavior:smooth;
 }
 
 body{
-    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-    min-height:100vh;
+    background:#0a0a0f;
     color:white;
     overflow-x:hidden;
 }
 
-/* Background Glow */
+/* 🔥 Animated Gradient Background */
 body::before{
     content:"";
     position:fixed;
     width:600px;
     height:600px;
-    background:radial-gradient(circle,#00f2fe55,transparent);
+    background:radial-gradient(circle,#ff00cc,#3333ff);
     top:-200px;
     left:-200px;
-    filter:blur(120px);
-    z-index:-1;
+    filter:blur(150px);
+    animation:move 10s infinite alternate;
 }
+
 body::after{
     content:"";
     position:fixed;
     width:600px;
     height:600px;
-    background:radial-gradient(circle,#4facfe55,transparent);
+    background:radial-gradient(circle,#00ffe0,#ffcc00);
     bottom:-200px;
     right:-200px;
-    filter:blur(120px);
-    z-index:-1;
+    filter:blur(150px);
+    animation:move 12s infinite alternate;
 }
 
-/* Navbar */
+@keyframes move{
+    0%{transform:translate(0,0);}
+    100%{transform:translate(100px,100px);}
+}
+
+/* NAV */
 nav{
     position:fixed;
     width:100%;
     padding:20px 10%;
     display:flex;
     justify-content:space-between;
-    align-items:center;
-    backdrop-filter:blur(15px);
+    backdrop-filter:blur(20px);
     background:rgba(255,255,255,0.05);
     border-bottom:1px solid rgba(255,255,255,0.1);
-    z-index:1000;
 }
 
 nav h1{
-    font-size:20px;
-    font-weight:600;
+    font-family:'Orbitron';
     letter-spacing:2px;
+    color:#00ffe0;
 }
 
 nav ul{
-    list-style:none;
     display:flex;
     gap:25px;
+    list-style:none;
 }
 
-nav ul li a{
-    text-decoration:none;
+nav a{
     color:white;
-    font-weight:400;
+    text-decoration:none;
     transition:0.3s;
 }
 
-nav ul li a:hover{
-    color:#00f2fe;
+nav a:hover{
+    color:#ff00cc;
 }
 
-/* Section General */
+/* SECTIONS */
 section{
     padding:120px 10%;
     min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
 }
 
-/* Glass Card */
+/* GLASS CARD */
 .glass{
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(20px);
+    background:rgba(255,255,255,0.05);
     border:1px solid rgba(255,255,255,0.15);
-    border-radius:20px;
-    padding:40px;
-    transition:0.4s ease;
+    backdrop-filter:blur(25px);
+    border-radius:25px;
+    padding:50px;
+    transition:0.4s;
+    position:relative;
+    overflow:hidden;
 }
 
 .glass:hover{
-    transform:translateY(-10px);
-    box-shadow:0 20px 40px rgba(0,0,0,0.4);
+    transform:translateY(-12px) scale(1.01);
+    box-shadow:0 0 40px #00ffe088;
 }
 
-/* Hero */
+/* HERO */
 .hero h2{
-    font-size:48px;
-    font-weight:700;
-    background:linear-gradient(to right,#00f2fe,#4facfe);
+    font-size:55px;
+    font-family:'Orbitron';
+    background:linear-gradient(90deg,#ff00cc,#00ffe0,#ffcc00);
     -webkit-background-clip:text;
     color:transparent;
 }
 
 .hero p{
     margin-top:20px;
-    font-size:18px;
-    line-height:1.6;
     max-width:700px;
+    line-height:1.7;
 }
 
+/* BUTTON */
 .btn{
     display:inline-block;
     margin-top:30px;
-    padding:12px 28px;
-    border-radius:30px;
-    background:linear-gradient(135deg,#00f2fe,#4facfe);
-    color:#000;
+    padding:14px 30px;
+    border-radius:50px;
+    background:linear-gradient(90deg,#ff00cc,#00ffe0);
+    color:black;
     font-weight:600;
     text-decoration:none;
     transition:0.3s;
@@ -138,10 +138,10 @@ section{
 
 .btn:hover{
     transform:scale(1.1);
-    box-shadow:0 10px 25px #00f2fe88;
+    box-shadow:0 0 30px #ff00cc;
 }
 
-/* Skills Grid */
+/* SKILLS */
 .skills{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -149,163 +149,121 @@ section{
     margin-top:40px;
 }
 
-.skill-card{
-    text-align:center;
+.skill{
     padding:30px;
     border-radius:20px;
-    background:rgba(255,255,255,0.07);
-    backdrop-filter:blur(15px);
-    border:1px solid rgba(255,255,255,0.1);
+    background:rgba(255,255,255,0.05);
     transition:0.4s;
+    text-align:center;
 }
 
-.skill-card:hover{
+.skill:hover{
+    background:linear-gradient(135deg,#ff00cc33,#00ffe033);
     transform:scale(1.05);
-    background:rgba(255,255,255,0.12);
+    box-shadow:0 0 25px #00ffe0;
 }
 
-.skill-card h3{
-    margin-top:15px;
-    font-weight:600;
-}
-
-/* Projects */
+/* PROJECT */
 .project{
     margin-top:30px;
+    padding:25px;
+    border-radius:15px;
+    background:rgba(255,255,255,0.05);
+    transition:0.3s;
 }
 
-.project h3{
-    font-weight:600;
-    margin-bottom:10px;
+.project:hover{
+    transform:translateX(10px);
+    background:linear-gradient(135deg,#ff00cc22,#00ffe022);
+}
+
+/* CURSOR GLOW */
+.cursor{
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    position:fixed;
+    background:#00ffe0;
+    pointer-events:none;
+    mix-blend-mode:difference;
+    transition:transform 0.1s;
 }
 
 footer{
     text-align:center;
     padding:30px;
-    backdrop-filter:blur(10px);
-    background:rgba(255,255,255,0.05);
-    border-top:1px solid rgba(255,255,255,0.1);
-}
-
-/* Scroll animation */
-.reveal{
-    opacity:0;
-    transform:translateY(50px);
-    transition:1s;
-}
-
-.reveal.active{
-    opacity:1;
-    transform:translateY(0);
+    opacity:0.6;
 }
 </style>
 </head>
 
 <body>
 
+<div class="cursor"></div>
+
 <nav>
-    <h1>Pulkit Yadav</h1>
+    <h1>PULKIT</h1>
     <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
 <section id="home" class="hero">
-    <div class="glass reveal">
-        <h2>DevOps • DevSecOps • Cybersecurity</h2>
+    <div class="glass">
+        <h2>DevOps • Cybersecurity • Cloud</h2>
         <p>
-            I am building toward becoming a top-tier DevOps & DevSecOps Engineer.
-            Focused on AWS, Kubernetes, CI/CD automation, security integration, and AI-powered workflows.
-            Currently mastering cloud infrastructure, automation pipelines, and scalable systems —
-            with a long-term vision of freelancing, global opportunities, and building impactful tech products.
+            Building elite-level DevOps & DevSecOps systems with AWS, Kubernetes, CI/CD pipelines,
+            and security-first architecture. Focused on high-performance systems, freelancing,
+            and global opportunities.
         </p>
-        <a href="#projects" class="btn">View My Work</a>
+        <a href="#projects" class="btn">Explore Work</a>
     </div>
 </section>
 
 <section id="skills">
-    <div class="glass reveal">
-        <h2>Core Skills</h2>
+    <div class="glass">
+        <h2>⚡ Skills</h2>
         <div class="skills">
-            <div class="skill-card">
-                <h3>Cloud & AWS</h3>
-                <p>EC2, S3, IAM, VPC, Solutions Architecture</p>
-            </div>
-            <div class="skill-card">
-                <h3>Containers</h3>
-                <p>Docker, Kubernetes (CKA Path)</p>
-            </div>
-            <div class="skill-card">
-                <h3>CI/CD</h3>
-                <p>Jenkins, GitHub, GitLab</p>
-            </div>
-            <div class="skill-card">
-                <h3>DevSecOps</h3>
-                <p>Trivy, SonarQube, OWASP, Secure Pipelines</p>
-            </div>
-            <div class="skill-card">
-                <h3>Monitoring</h3>
-                <p>Prometheus, Grafana</p>
-            </div>
-            <div class="skill-card">
-                <h3>Scripting</h3>
-                <p>Linux, Bash, Python Automation</p>
-            </div>
+            <div class="skill">AWS & Cloud</div>
+            <div class="skill">Docker & Kubernetes</div>
+            <div class="skill">CI/CD Pipelines</div>
+            <div class="skill">DevSecOps Tools</div>
+            <div class="skill">Monitoring Stack</div>
+            <div class="skill">Linux & Automation</div>
         </div>
     </div>
 </section>
 
 <section id="projects">
-    <div class="glass reveal">
-        <h2>Highlighted Projects</h2>
+    <div class="glass">
+        <h2>🚀 Projects</h2>
 
         <div class="project">
-            <h3>🚀 End-to-End CI/CD DevSecOps Pipeline</h3>
-            <p>Automated Dockerized app deployment on Kubernetes with Jenkins pipeline,
-            integrated SonarQube & Trivy security scans, and monitored via Prometheus + Grafana.</p>
+            🔥 DevSecOps CI/CD Pipeline with Jenkins, Trivy & Kubernetes
         </div>
 
         <div class="project">
-            <h3>☁️ AWS Scalable Infrastructure Setup</h3>
-            <p>Designed VPC, EC2 auto-scaling setup with IAM security policies and production-ready architecture principles.</p>
+            ☁️ AWS Production Infrastructure Architecture
         </div>
 
         <div class="project">
-            <h3>📊 Trading Strategy Backtesting System</h3>
-            <p>Built structured strategy validation workflow with risk management principles and disciplined execution framework.</p>
+            📊 Trading Strategy System & Risk Framework
         </div>
-    </div>
-</section>
 
-<section id="contact">
-    <div class="glass reveal">
-        <h2>Let’s Connect</h2>
-        <p>
-            Open to freelance DevOps projects, cloud automation work, and global opportunities.
-            I believe in discipline, execution, and building systems that scale.
-        </p>
-        <a href="mailto:your@email.com" class="btn">Contact Me</a>
     </div>
 </section>
 
 <footer>
-    © 2026 Pulkit Yadav | Built with Vision & Discipline
+    ⚡ Built by Pulkit Yadav | Future Top Engineer
 </footer>
 
 <script>
-window.addEventListener('scroll', function() {
-    let reveals = document.querySelectorAll('.reveal');
-    reveals.forEach((el)=>{
-        let windowHeight = window.innerHeight;
-        let elementTop = el.getBoundingClientRect().top;
-        let elementVisible = 150;
-        if(elementTop < windowHeight - elementVisible){
-            el.classList.add('active');
-        }
-    });
+const cursor = document.querySelector('.cursor');
+document.addEventListener('mousemove', e => {
+    cursor.style.top = e.clientY + 'px';
+    cursor.style.left = e.clientX + 'px';
 });
 </script>
 
