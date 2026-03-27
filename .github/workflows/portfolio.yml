@@ -24,6 +24,8 @@ jobs:
 
             - name: upload static page
               uses: actions/upload-pages-artifact@v4
+              with:
+                path: "."
 
             - name: deploy the page
               uses: actions/deploy-pages@v4
