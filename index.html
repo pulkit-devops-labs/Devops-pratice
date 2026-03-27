@@ -16,10 +16,11 @@ body{
   overflow-x:hidden;
 }
 
-/* PARTICLES BG */
+/* PARTICLES */
 canvas{
   position:fixed;
-  top:0;left:0;
+  top:0;
+  left:0;
   z-index:-1;
 }
 
@@ -32,6 +33,7 @@ nav{
   justify-content:space-between;
   backdrop-filter:blur(20px);
   background:rgba(255,255,255,0.05);
+  z-index:1000;
 }
 
 nav h1{
@@ -43,6 +45,11 @@ nav a{
   margin-left:20px;
   color:white;
   text-decoration:none;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#ff00cc;
 }
 
 /* SECTION */
@@ -52,16 +59,22 @@ section{
 
 /* HERO */
 .hero h2{
-  font-size:60px;
+  font-size:65px;
   background:linear-gradient(90deg,#ff00cc,#00ffe0,#ffcc00);
   -webkit-background-clip:text;
   color:transparent;
 }
 
 .typing{
-  font-size:20px;
-  margin-top:10px;
+  font-size:22px;
   color:#00ffe0;
+  margin-top:10px;
+}
+
+.hero p{
+  margin-top:20px;
+  max-width:700px;
+  line-height:1.6;
 }
 
 /* BUTTON */
@@ -72,23 +85,25 @@ section{
   border-radius:30px;
   background:linear-gradient(90deg,#ff00cc,#00ffe0);
   color:black;
+  font-weight:600;
   text-decoration:none;
   transition:0.3s;
 }
+
 .btn:hover{
   transform:scale(1.1);
   box-shadow:0 0 30px #ff00cc;
 }
 
-/* GLASS CARD */
+/* CARD */
 .card{
   background:rgba(255,255,255,0.05);
   backdrop-filter:blur(20px);
   border-radius:20px;
   padding:30px;
   margin-top:30px;
-  transition:0.4s;
   border:1px solid rgba(255,255,255,0.1);
+  transition:0.4s;
 }
 
 .card:hover{
@@ -112,6 +127,7 @@ section{
   background:rgba(255,255,255,0.08);
   transition:0.3s;
 }
+
 .tag:hover{
   background:#00ffe0;
   color:black;
@@ -120,8 +136,20 @@ section{
 /* FOOTER */
 footer{
   text-align:center;
-  padding:30px;
+  padding:40px;
   opacity:0.6;
+}
+
+/* SCROLL ANIMATION */
+.reveal{
+  opacity:0;
+  transform:translateY(50px);
+  transition:1s;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
 }
 </style>
 </head>
@@ -131,25 +159,29 @@ footer{
 <canvas id="bg"></canvas>
 
 <nav>
-  <h1>PULKIT</h1>
+  <h1>Pulkit Yadav</h1>
   <div>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#roadmap">Roadmap</a>
+    <a href="#contact">Contact</a>
   </div>
 </nav>
 
-<section class="hero">
-  <h2>DevOps Engineer</h2>
+<!-- HERO -->
+<section class="hero reveal">
+  <h2>Pulkit Yadav</h2>
   <div class="typing" id="typing"></div>
   <p>
-    Building high-performance DevOps & DevSecOps systems with AWS, Kubernetes,
+    DevOps & DevSecOps Engineer building real-world systems with AWS, Kubernetes,
     CI/CD pipelines, and security-first architecture.
+    Target: Freelancing → Global Opportunities → Own Tech Company.
   </p>
   <a href="#projects" class="btn">Explore Work</a>
 </section>
 
-<section id="skills">
+<!-- SKILLS -->
+<section id="skills" class="reveal">
   <h2>🔥 Skills</h2>
   <div class="grid">
 
@@ -159,6 +191,7 @@ footer{
       <span class="tag">EC2</span>
       <span class="tag">S3</span>
       <span class="tag">IAM</span>
+      <span class="tag">VPC</span>
     </div>
 
     <div class="card">
@@ -171,10 +204,11 @@ footer{
       <h3>CI/CD</h3>
       <span class="tag">Jenkins</span>
       <span class="tag">GitHub Actions</span>
+      <span class="tag">GitLab</span>
     </div>
 
     <div class="card">
-      <h3>Security</h3>
+      <h3>DevSecOps</h3>
       <span class="tag">Trivy</span>
       <span class="tag">OWASP</span>
       <span class="tag">SonarQube</span>
@@ -196,19 +230,35 @@ footer{
   </div>
 </section>
 
-<section id="projects">
+<!-- PROJECTS -->
+<section id="projects" class="reveal">
   <h2>🚀 Projects</h2>
 
-  <div class="card">DevSecOps Pipeline</div>
-  <div class="card">AWS Infrastructure</div>
-  <div class="card">Trading System</div>
+  <div class="card">🔥 DevSecOps Pipeline</div>
+  <div class="card">☁️ AWS Infrastructure</div>
+  <div class="card">📊 Trading System</div>
 
 </section>
 
-<section id="roadmap">
-  <h2>🧠 Roadmap</h2>
+<!-- ROADMAP -->
+<section id="roadmap" class="reveal">
+  <h2>🧠 Execution Roadmap</h2>
   <div class="card">
-    DevOps → DevSecOps → Cloud → Freelancing → Global
+    Phase 1 → Linux + Git + Docker<br>
+    Phase 2 → Kubernetes + CI/CD<br>
+    Phase 3 → AWS + Infrastructure<br>
+    Phase 4 → DevSecOps + Monitoring<br>
+    Phase 5 → Freelancing + Global Work
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="reveal">
+  <h2>📩 Contact</h2>
+  <div class="card">
+    <p>Email: your@email.com</p>
+    <p>GitHub: github.com/yourprofile</p>
+    <p>LinkedIn: linkedin.com/in/yourprofile</p>
   </div>
 </section>
 
@@ -217,52 +267,62 @@ footer{
 </footer>
 
 <script>
-// TYPING EFFECT
-const text = ["DevOps", "Cloud", "Cybersecurity", "Freelancer"];
-let i=0,j=0,cur="",isDeleting=false;
+// typing
+const text=["DevOps","Cloud","Cybersecurity","Freelancer"];
+let i=0,j=0,isDeleting=false;
 
 function type(){
-  cur=text[i];
-  if(!isDeleting){
-    document.getElementById("typing").innerHTML=cur.substring(0,j++);
-    if(j>cur.length){isDeleting=true; setTimeout(type,1000); return;}
-  } else {
-    document.getElementById("typing").innerHTML=cur.substring(0,j--);
-    if(j<0){isDeleting=false; i=(i+1)%text.length;}
-  }
-  setTimeout(type,isDeleting?50:100);
+ let el=document.getElementById("typing");
+ let word=text[i];
+
+ if(!isDeleting){
+  el.innerHTML=word.substring(0,j++);
+  if(j>word.length){isDeleting=true;setTimeout(type,1000);return;}
+ }else{
+  el.innerHTML=word.substring(0,j--);
+  if(j<0){isDeleting=false;i=(i+1)%text.length;}
+ }
+ setTimeout(type,isDeleting?50:100);
 }
 type();
 
-// PARTICLES
+// particles
 const canvas=document.getElementById("bg");
 const ctx=canvas.getContext("2d");
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
+canvas.width=innerWidth;
+canvas.height=innerHeight;
 
 let particles=[];
-for(let i=0;i<100;i++){
-  particles.push({
-    x:Math.random()*canvas.width,
-    y:Math.random()*canvas.height,
-    r:Math.random()*2,
-    dx:Math.random()*0.5,
-    dy:Math.random()*0.5
-  });
+for(let i=0;i<120;i++){
+ particles.push({
+  x:Math.random()*canvas.width,
+  y:Math.random()*canvas.height,
+  r:Math.random()*2,
+  dx:Math.random()*0.5,
+  dy:Math.random()*0.5
+ });
 }
 
 function draw(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  particles.forEach(p=>{
-    ctx.beginPath();
-    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fillStyle="#00ffe0";
-    ctx.fill();
-    p.x+=p.dx; p.y+=p.dy;
-  });
-  requestAnimationFrame(draw);
+ ctx.clearRect(0,0,canvas.width,canvas.height);
+ particles.forEach(p=>{
+  ctx.beginPath();
+  ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+  ctx.fillStyle="#00ffe0";
+  ctx.fill();
+  p.x+=p.dx; p.y+=p.dy;
+ });
+ requestAnimationFrame(draw);
 }
 draw();
+
+// scroll reveal
+window.addEventListener("scroll",()=>{
+ document.querySelectorAll(".reveal").forEach(el=>{
+  let top=el.getBoundingClientRect().top;
+  if(top<window.innerHeight-100) el.classList.add("active");
+ });
+});
 </script>
 
 </body>
