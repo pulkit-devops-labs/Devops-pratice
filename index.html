@@ -3,66 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pulkit Yadav</title>
+<title>Pulkit Yadav | DevOps Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
 body{
-  margin:0;
-  font-family:sans-serif;
   background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
   color:white;
+  overflow-x:hidden;
+}
+
+/* GLOW BG */
+body::before{
+  content:"";
+  position:fixed;
+  width:500px;height:500px;
+  background:#ff00cc;
+  filter:blur(150px);
+  top:-150px;left:-150px;
+  opacity:0.4;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  width:500px;height:500px;
+  background:#00ffe0;
+  filter:blur(150px);
+  bottom:-150px;right:-150px;
+  opacity:0.4;
 }
 
 /* NAV */
 nav{
   display:flex;
   justify-content:space-between;
-  padding:20px;
+  padding:20px 10%;
+  backdrop-filter:blur(15px);
   background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(10px);
+  position:fixed;width:100%;
 }
 
-nav h1{
-  color:#00ffe0;
-}
+nav h1{color:#00ffe0;}
+nav a{color:white;margin-left:20px;text-decoration:none;}
+
+/* SECTION */
+section{padding:120px 10%;}
 
 /* HERO */
-.hero{
-  text-align:center;
-  padding:100px 20px;
-}
-
 .hero h2{
-  font-size:50px;
+  font-size:55px;
   background:linear-gradient(90deg,#ff00cc,#00ffe0,#ffcc00);
   -webkit-background-clip:text;
   color:transparent;
 }
 
+.hero p{margin-top:20px;max-width:700px;}
+
 .btn{
   display:inline-block;
-  margin-top:20px;
-  padding:12px 25px;
+  margin-top:25px;
+  padding:12px 30px;
   border-radius:30px;
   background:linear-gradient(90deg,#ff00cc,#00ffe0);
   color:black;
-  font-weight:bold;
+  font-weight:600;
   text-decoration:none;
-}
-
-/* CARD */
-.card{
-  margin:30px;
-  padding:30px;
-  border-radius:20px;
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(15px);
   transition:0.3s;
 }
+.btn:hover{transform:scale(1.1);}
 
+/* GLASS CARD */
+.card{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(15px);
+  border-radius:20px;
+  padding:30px;
+  margin-top:30px;
+  transition:0.3s;
+}
 .card:hover{
   transform:translateY(-10px);
-  box-shadow:0 0 25px #00ffe0;
+  box-shadow:0 0 30px #00ffe0;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+/* TAGS */
+.tag{
+  display:inline-block;
+  padding:6px 12px;
+  margin:5px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.08);
+  font-size:13px;
+}
+
+/* TITLE */
+h2{margin-bottom:15px;}
+
+footer{
+  text-align:center;
+  padding:30px;
+  opacity:0.6;
 }
 </style>
 </head>
@@ -71,23 +122,128 @@ nav h1{
 
 <nav>
   <h1>Pulkit Yadav</h1>
+  <div>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#roadmap">Roadmap</a>
+  </div>
 </nav>
 
-<div class="hero">
-  <h2>DevOps • Cloud • Cybersecurity</h2>
-  <p>Building elite DevOps systems with AWS & Kubernetes</p>
-  <a href="#" class="btn">Explore</a>
-</div>
+<!-- HERO -->
+<section class="hero">
+  <h2>DevOps • DevSecOps • Cloud Engineer</h2>
+  <p>
+    Focused on mastering AWS, Kubernetes, CI/CD, and security-driven systems.
+    Building real-world projects with production mindset.
+    Target: Freelancing → Global Opportunities → Own Tech Company.
+  </p>
+  <a href="#projects" class="btn">Explore Work</a>
+</section>
 
-<div class="card">
-  <h3>🔥 DevSecOps Pipeline</h3>
-  <p>CI/CD + Docker + Kubernetes + Security</p>
-</div>
+<!-- SKILLS -->
+<section id="skills">
+  <h2>🔥 Skills</h2>
+  <div class="card grid">
 
-<div class="card">
-  <h3>☁️ AWS Infrastructure</h3>
-  <p>Scalable cloud architecture</p>
-</div>
+    <div>
+      <h3>☁️ Cloud</h3>
+      <span class="tag">AWS EC2</span>
+      <span class="tag">S3</span>
+      <span class="tag">IAM</span>
+      <span class="tag">VPC</span>
+    </div>
+
+    <div>
+      <h3>🐳 Containers</h3>
+      <span class="tag">Docker</span>
+      <span class="tag">Kubernetes</span>
+    </div>
+
+    <div>
+      <h3>⚙️ CI/CD</h3>
+      <span class="tag">Jenkins</span>
+      <span class="tag">GitHub Actions</span>
+      <span class="tag">GitLab</span>
+    </div>
+
+    <div>
+      <h3>🔐 DevSecOps</h3>
+      <span class="tag">Trivy</span>
+      <span class="tag">OWASP</span>
+      <span class="tag">SonarQube</span>
+    </div>
+
+    <div>
+      <h3>📊 Monitoring</h3>
+      <span class="tag">Prometheus</span>
+      <span class="tag">Grafana</span>
+    </div>
+
+    <div>
+      <h3>💻 Scripting</h3>
+      <span class="tag">Linux</span>
+      <span class="tag">Bash</span>
+      <span class="tag">Python</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>🚀 Projects</h2>
+
+  <div class="card">
+    <h3>🔥 DevSecOps Pipeline</h3>
+    <p>
+      CI/CD pipeline with Docker → Jenkins → Trivy → SonarQube → Kubernetes deployment.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>☁️ AWS Infrastructure</h3>
+    <p>
+      Scalable architecture with EC2, IAM security, and VPC networking.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>📊 Trading System</h3>
+    <p>
+      Structured execution model with discipline, risk management & backtesting.
+    </p>
+  </div>
+
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap">
+  <h2>🧠 Execution Roadmap</h2>
+
+  <div class="card">
+    <p><b>Phase 1:</b> Linux + Git + Docker</p>
+    <p><b>Phase 2:</b> Kubernetes + CI/CD</p>
+    <p><b>Phase 3:</b> AWS + Infrastructure</p>
+    <p><b>Phase 4:</b> DevSecOps + Monitoring</p>
+    <p><b>Phase 5:</b> Freelancing + Real Projects</p>
+  </div>
+
+</section>
+
+<!-- VISION -->
+<section>
+  <h2>🎯 Vision</h2>
+  <div class="card">
+    <p>
+      Become a top-tier DevOps engineer, build global income streams,
+      and eventually create a scalable tech company.
+    </p>
+  </div>
+</section>
+
+<footer>
+  ⚡ Built by Pulkit Yadav | Future Top Engineer 🚀
+</footer>
 
 </body>
 </html>
