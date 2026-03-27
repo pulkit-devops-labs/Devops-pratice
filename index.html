@@ -11,58 +11,60 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
 body{
-  background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+  background:#050509;
   color:white;
   overflow-x:hidden;
 }
 
-/* GLOW BG */
-body::before{
-  content:"";
+/* PARTICLES BG */
+canvas{
   position:fixed;
-  width:500px;height:500px;
-  background:#ff00cc;
-  filter:blur(150px);
-  top:-150px;left:-150px;
-  opacity:0.4;
-}
-
-body::after{
-  content:"";
-  position:fixed;
-  width:500px;height:500px;
-  background:#00ffe0;
-  filter:blur(150px);
-  bottom:-150px;right:-150px;
-  opacity:0.4;
+  top:0;left:0;
+  z-index:-1;
 }
 
 /* NAV */
 nav{
+  position:fixed;
+  width:100%;
+  padding:20px 10%;
   display:flex;
   justify-content:space-between;
-  padding:20px 10%;
-  backdrop-filter:blur(15px);
+  backdrop-filter:blur(20px);
   background:rgba(255,255,255,0.05);
-  position:fixed;width:100%;
 }
 
-nav h1{color:#00ffe0;}
-nav a{color:white;margin-left:20px;text-decoration:none;}
+nav h1{
+  color:#00ffe0;
+  letter-spacing:2px;
+}
+
+nav a{
+  margin-left:20px;
+  color:white;
+  text-decoration:none;
+}
 
 /* SECTION */
-section{padding:120px 10%;}
+section{
+  padding:120px 10%;
+}
 
 /* HERO */
 .hero h2{
-  font-size:55px;
+  font-size:60px;
   background:linear-gradient(90deg,#ff00cc,#00ffe0,#ffcc00);
   -webkit-background-clip:text;
   color:transparent;
 }
 
-.hero p{margin-top:20px;max-width:700px;}
+.typing{
+  font-size:20px;
+  margin-top:10px;
+  color:#00ffe0;
+}
 
+/* BUTTON */
 .btn{
   display:inline-block;
   margin-top:25px;
@@ -70,24 +72,28 @@ section{padding:120px 10%;}
   border-radius:30px;
   background:linear-gradient(90deg,#ff00cc,#00ffe0);
   color:black;
-  font-weight:600;
   text-decoration:none;
   transition:0.3s;
 }
-.btn:hover{transform:scale(1.1);}
+.btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 30px #ff00cc;
+}
 
 /* GLASS CARD */
 .card{
   background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(15px);
+  backdrop-filter:blur(20px);
   border-radius:20px;
   padding:30px;
   margin-top:30px;
-  transition:0.3s;
+  transition:0.4s;
+  border:1px solid rgba(255,255,255,0.1);
 }
+
 .card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 0 30px #00ffe0;
+  transform:translateY(-12px) scale(1.02);
+  box-shadow:0 0 40px #00ffe0;
 }
 
 /* GRID */
@@ -97,19 +103,21 @@ section{padding:120px 10%;}
   gap:20px;
 }
 
-/* TAGS */
+/* TAG */
 .tag{
   display:inline-block;
   padding:6px 12px;
   margin:5px;
   border-radius:20px;
   background:rgba(255,255,255,0.08);
-  font-size:13px;
+  transition:0.3s;
+}
+.tag:hover{
+  background:#00ffe0;
+  color:black;
 }
 
-/* TITLE */
-h2{margin-bottom:15px;}
-
+/* FOOTER */
 footer{
   text-align:center;
   padding:30px;
@@ -120,8 +128,10 @@ footer{
 
 <body>
 
+<canvas id="bg"></canvas>
+
 <nav>
-  <h1>Pulkit Yadav</h1>
+  <h1>PULKIT</h1>
   <div>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
@@ -129,58 +139,55 @@ footer{
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <h2>DevOps • DevSecOps • Cloud Engineer</h2>
+  <h2>DevOps Engineer</h2>
+  <div class="typing" id="typing"></div>
   <p>
-    Focused on mastering AWS, Kubernetes, CI/CD, and security-driven systems.
-    Building real-world projects with production mindset.
-    Target: Freelancing → Global Opportunities → Own Tech Company.
+    Building high-performance DevOps & DevSecOps systems with AWS, Kubernetes,
+    CI/CD pipelines, and security-first architecture.
   </p>
   <a href="#projects" class="btn">Explore Work</a>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <h2>🔥 Skills</h2>
-  <div class="card grid">
+  <div class="grid">
 
-    <div>
-      <h3>☁️ Cloud</h3>
-      <span class="tag">AWS EC2</span>
+    <div class="card">
+      <h3>Cloud</h3>
+      <span class="tag">AWS</span>
+      <span class="tag">EC2</span>
       <span class="tag">S3</span>
       <span class="tag">IAM</span>
-      <span class="tag">VPC</span>
     </div>
 
-    <div>
-      <h3>🐳 Containers</h3>
+    <div class="card">
+      <h3>Containers</h3>
       <span class="tag">Docker</span>
       <span class="tag">Kubernetes</span>
     </div>
 
-    <div>
-      <h3>⚙️ CI/CD</h3>
+    <div class="card">
+      <h3>CI/CD</h3>
       <span class="tag">Jenkins</span>
       <span class="tag">GitHub Actions</span>
-      <span class="tag">GitLab</span>
     </div>
 
-    <div>
-      <h3>🔐 DevSecOps</h3>
+    <div class="card">
+      <h3>Security</h3>
       <span class="tag">Trivy</span>
       <span class="tag">OWASP</span>
       <span class="tag">SonarQube</span>
     </div>
 
-    <div>
-      <h3>📊 Monitoring</h3>
+    <div class="card">
+      <h3>Monitoring</h3>
       <span class="tag">Prometheus</span>
       <span class="tag">Grafana</span>
     </div>
 
-    <div>
-      <h3>💻 Scripting</h3>
+    <div class="card">
+      <h3>Scripting</h3>
       <span class="tag">Linux</span>
       <span class="tag">Bash</span>
       <span class="tag">Python</span>
@@ -189,61 +196,74 @@ footer{
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <h2>🚀 Projects</h2>
 
-  <div class="card">
-    <h3>🔥 DevSecOps Pipeline</h3>
-    <p>
-      CI/CD pipeline with Docker → Jenkins → Trivy → SonarQube → Kubernetes deployment.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>☁️ AWS Infrastructure</h3>
-    <p>
-      Scalable architecture with EC2, IAM security, and VPC networking.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>📊 Trading System</h3>
-    <p>
-      Structured execution model with discipline, risk management & backtesting.
-    </p>
-  </div>
+  <div class="card">DevSecOps Pipeline</div>
+  <div class="card">AWS Infrastructure</div>
+  <div class="card">Trading System</div>
 
 </section>
 
-<!-- ROADMAP -->
 <section id="roadmap">
-  <h2>🧠 Execution Roadmap</h2>
-
+  <h2>🧠 Roadmap</h2>
   <div class="card">
-    <p><b>Phase 1:</b> Linux + Git + Docker</p>
-    <p><b>Phase 2:</b> Kubernetes + CI/CD</p>
-    <p><b>Phase 3:</b> AWS + Infrastructure</p>
-    <p><b>Phase 4:</b> DevSecOps + Monitoring</p>
-    <p><b>Phase 5:</b> Freelancing + Real Projects</p>
-  </div>
-
-</section>
-
-<!-- VISION -->
-<section>
-  <h2>🎯 Vision</h2>
-  <div class="card">
-    <p>
-      Become a top-tier DevOps engineer, build global income streams,
-      and eventually create a scalable tech company.
-    </p>
+    DevOps → DevSecOps → Cloud → Freelancing → Global
   </div>
 </section>
 
 <footer>
-  ⚡ Built by Pulkit Yadav | Future Top Engineer 🚀
+  ⚡ Pulkit Yadav | Future Top Engineer 🚀
 </footer>
+
+<script>
+// TYPING EFFECT
+const text = ["DevOps", "Cloud", "Cybersecurity", "Freelancer"];
+let i=0,j=0,cur="",isDeleting=false;
+
+function type(){
+  cur=text[i];
+  if(!isDeleting){
+    document.getElementById("typing").innerHTML=cur.substring(0,j++);
+    if(j>cur.length){isDeleting=true; setTimeout(type,1000); return;}
+  } else {
+    document.getElementById("typing").innerHTML=cur.substring(0,j--);
+    if(j<0){isDeleting=false; i=(i+1)%text.length;}
+  }
+  setTimeout(type,isDeleting?50:100);
+}
+type();
+
+// PARTICLES
+const canvas=document.getElementById("bg");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+for(let i=0;i<100;i++){
+  particles.push({
+    x:Math.random()*canvas.width,
+    y:Math.random()*canvas.height,
+    r:Math.random()*2,
+    dx:Math.random()*0.5,
+    dy:Math.random()*0.5
+  });
+}
+
+function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach(p=>{
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle="#00ffe0";
+    ctx.fill();
+    p.x+=p.dx; p.y+=p.dy;
+  });
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
 
 </body>
 </html>
