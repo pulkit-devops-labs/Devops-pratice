@@ -1,0 +1,26 @@
+name: portfolio
+
+on:
+    push:
+        branches: [main]
+permissions:
+    pages: write
+    id-token: write
+
+jobs:
+    
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: code checkout
+              uses: actions/checkout@v4
+
+            - name: configured page
+              uses: actions/configure-pages@v4
+
+            - name: upload static page
+              uses: actions/upload-pages-artifact@v4
+
+            - name: deploy the page
+              uses: actions/deploy-pages@v4
