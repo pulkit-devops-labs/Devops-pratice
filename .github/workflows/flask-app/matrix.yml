@@ -3,6 +3,8 @@ name: matrix-workflow
 on:
     push:
         branches: [main]
+        paths:
+            - "flask-app/**"
 jobs:
     validate:
 
