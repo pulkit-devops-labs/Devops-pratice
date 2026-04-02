@@ -24,6 +24,8 @@ jobs:
             
                 name: install requirements.txt
                 run: pip install -r requirement.txt
+                with:
+                    path: "."
 
                 name: run linter
                 run: flake8 app.py
